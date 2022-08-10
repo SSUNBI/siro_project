@@ -1,13 +1,20 @@
 import os
 import openpyxl
 import win32com.client
-from datetime import datetime, date
-import pandas as pd
 #파일 중 다른 년도, 다른 월 들어오면 애러표시 아직 구현 안함
+
+
+def copy_sheet(wb_ct, directory_cf, sheet_num, sheet_name): #wb_ct : workbook copy to / directory_cf : directory copy from / sheet_num : 복사해올 시트 번호
+    wb = excel.Workbooks.Open(directory_cf)
+    wb.Worksheets(wb.Sheets[sheet_num].Name).Copy(Before=wb_ct.Worksheets("Sheet1"))
+    ws_t = wb_ct.Worksheets(wb.Sheets[sheet_num].Name)
+    ws_t.Name = sheet_name
+
 
 wd = os.getcwd() #working directory
 dd = wd + "\\" + "data_files" #data files directory
 filelist = os.listdir(dd)
+
 
 #파일 병합 시작
 for i in filelist:
@@ -34,81 +41,44 @@ for i in filelist:
         elif 'C' in i:
             yogi_C = i
         
+
 year = int(yanolza[:4])
 month = int(yanolza[5:7])
-day = 1
-
-DAY = date(year, month, day)
-
-day_of_index = DAY.weekday()
-days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-print(days[day_of_index])
 rd = wd + "\\" + "result" + "\\" + yanolza[:4] + "_" + yanolza[5:7]
 
 if not os.path.exists(rd):
     os.makedirs(rd)
 
 #파일 옮기기
+print("""
+1. 파일 옮겨짐 (실제 사용 목적)
+2. 파일 안옮겨짐(테스트 목적)
+""")
+a = int(input())
+
 sd = rd + "\\" + "data_files" #source 파일 저장할 디렉토리 생성
 if not os.path.exists(sd):
     os.makedirs(sd)
-
-for i in filelist:
-    os.replace(dd + "\\" + i, sd +"\\" + i)
+if a == 1:
+    for i in filelist:
+        os.replace(dd + "\\" + i, sd +"\\" + i)
+elif a == 2:
+    sd = dd
 
 excel = win32com.client.Dispatch("Excel.Application")
 wb_new = excel.Workbooks.Add()
 
+copy_sheet(wb_new, sd + '\\' + yanolza, 0, "yanolza")
+copy_sheet(wb_new, sd + '\\' + ddnayo, 0, "ddnayo")
+copy_sheet(wb_new, sd + '\\' + yogi_A, 0, "yogi_A")
+copy_sheet(wb_new, sd + '\\' + yogi_B, 0, "yogi_B")
+copy_sheet(wb_new, sd + '\\' + yogi_C, 0, "yogi_C")
+copy_sheet(wb_new, sd + '\\' + cafe_bank, 0, "cafe_bank")
+copy_sheet(wb_new, sd + '\\' + M_bank, 0, "M_bank")
+copy_sheet(wb_new, sd + '\\' + A_bank, 0, "A_bank")
+copy_sheet(wb_new, sd + '\\' + B_bank, 0, "B_bank")
+copy_sheet(wb_new, sd + '\\' + C_bank, 0, "C_bank")
 
-wb = excel.Workbooks.Open(sd + '\\' + yanolza)
-wb.Worksheets(yanolza[:-4]).Copy(Before=wb_new.Worksheets("Sheet1"))
-ws1 = wb_new.Worksheets(yanolza[:-4])
-ws1.Name = "yanolza"
-
-wb = excel.Workbooks.Open(sd + '\\' + ddnayo)
-wb.Worksheets("AdjustCalendar").Copy(Before=wb_new.Worksheets("Sheet1"))
-ws1 = wb_new.Worksheets("AdjustCalendar")
-ws1.Name = "ddnayo"
-
-wb = excel.Workbooks.Open(sd + '\\' + yogi_A)
-wb.Worksheets(yogi_A[-26:-5]).Copy(Before=wb_new.Worksheets("Sheet1"))
-ws1 = wb_new.Worksheets(yogi_A[-26:-5])
-ws1.Name = "yogi_A"
-
-wb = excel.Workbooks.Open(sd + '\\' + yogi_B)
-wb.Worksheets(yogi_B[-26:-5]).Copy(Before=wb_new.Worksheets("Sheet1"))
-ws1 = wb_new.Worksheets(yogi_B[-26:-5])
-ws1.Name = "yogi_B"
-
-wb = excel.Workbooks.Open(sd + '\\' + yogi_C)
-wb.Worksheets(yogi_C[-26:-5]).Copy(Before=wb_new.Worksheets("Sheet1"))
-ws1 = wb_new.Worksheets(yogi_C[-26:-5])
-ws1.Name = "yogi_C"
-
-wb = excel.Workbooks.Open(sd + '\\' + cafe_bank)
-wb.Worksheets(wb.Sheets[0].Name).Copy(Before=wb_new.Worksheets("Sheet1"))
-ws1 = wb_new.Worksheets(wb.Sheets[0].Name)
-ws1.Name = "cafe_bank"
-
-wb = excel.Workbooks.Open(sd + '\\' + M_bank)
-wb.Worksheets(wb.Sheets[0].Name).Copy(Before=wb_new.Worksheets("Sheet1"))
-ws1 = wb_new.Worksheets(wb.Sheets[0].Name)
-ws1.Name = "M_bank"
-
-wb = excel.Workbooks.Open(sd + '\\' + A_bank)
-wb.Worksheets(wb.Sheets[0].Name).Copy(Before=wb_new.Worksheets("Sheet1"))
-ws1 = wb_new.Worksheets(wb.Sheets[0].Name)
-ws1.Name = "A_bank"
-
-wb = excel.Workbooks.Open(sd + '\\' + B_bank)
-wb.Worksheets(wb.Sheets[0].Name).Copy(Before=wb_new.Worksheets("Sheet1"))
-ws1 = wb_new.Worksheets(wb.Sheets[0].Name)
-ws1.Name = "B_bank"
-
-wb = excel.Workbooks.Open(sd + '\\' + C_bank)
-wb.Worksheets(wb.Sheets[0].Name).Copy(Before=wb_new.Worksheets("Sheet1"))
-ws1 = wb_new.Worksheets(wb.Sheets[0].Name)
-ws1.Name = "C_bank"
 
 ws1 = wb_new.Worksheets.Add()
 ws1.Name = "calculate"
@@ -118,29 +88,15 @@ wb_new.SaveAs(filename)
 excel.Quit()
 #파일 병합 끝
 
-#수식 적는 곳 시작
+#데이터 한 시트에 묶기
 wb = openpyxl.load_workbook(filename)
 wb.move_sheet("calculate", -9)
-wb.save(filename)
 
-#시트 날짜별로 정렬
-sheet_yanolza = wb["yanolza"]
-sheet_yanolza.range('C3:C20').Sort(Key1=sheet_yanolza.range('C1'), Order1=1,Orienttation=1)
-wb.save(filename)
+#야놀자
+ws = wb["yanolza"]
 
-#여기어때 시트 정산금액 텍스트 형식 숫자형식으로 W열에 저장
-sheet_yogi_A = wb["yogi_A"]
-for i in range(4,105):
-    sheet_yogi_A.cell(row = i, column = 23, value = '=I'+str(i)+'*1')
 
-sheet_yogi_B = wb["yogi_B"]
-for i in range(4,105):
-    sheet_yogi_B.cell(row = i, column = 23, value = '=I'+str(i)+'*1')
-
-sheet_yogi_C = wb["yogi_C"]
-for i in range(4,105):
-    sheet_yogi_C.cell(row = i, column = 23, value = '=I'+str(i)+'*1')
-
+#수식 적는 곳 시작
 sheet = wb["calculate"]
 
 sheet['A1'] = '매출종합본'
@@ -165,4 +121,3 @@ sheet['B9'] = '=SUM(B4:B8)'
 
 wb.save(filename)
 #수식 적는 곳 끝
-# 1
