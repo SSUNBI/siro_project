@@ -1,20 +1,12 @@
 import os
 import openpyxl
 import win32com.client
+import sheet_merge
 #파일 중 다른 년도, 다른 월 들어오면 애러표시 아직 구현 안함
-
-
-def copy_sheet(wb_ct, directory_cf, sheet_num, sheet_name): #wb_ct : workbook copy to / directory_cf : directory copy from / sheet_num : 복사해올 시트 번호
-    wb = excel.Workbooks.Open(directory_cf)
-    wb.Worksheets(wb.Sheets[sheet_num].Name).Copy(Before=wb_ct.Worksheets("Sheet1"))
-    ws_t = wb_ct.Worksheets(wb.Sheets[sheet_num].Name)
-    ws_t.Name = sheet_name
-
 
 wd = os.getcwd() #working directory
 dd = wd + "\\" + "data_files" #data files directory
 filelist = os.listdir(dd)
-
 
 #파일 병합 시작
 for i in filelist:
@@ -68,17 +60,7 @@ elif a == 2:
 excel = win32com.client.Dispatch("Excel.Application")
 wb_new = excel.Workbooks.Add()
 
-copy_sheet(wb_new, sd + '\\' + yanolza, 0, "yanolza")
-copy_sheet(wb_new, sd + '\\' + ddnayo, 0, "ddnayo")
-copy_sheet(wb_new, sd + '\\' + yogi_A, 0, "yogi_A")
-copy_sheet(wb_new, sd + '\\' + yogi_B, 0, "yogi_B")
-copy_sheet(wb_new, sd + '\\' + yogi_C, 0, "yogi_C")
-copy_sheet(wb_new, sd + '\\' + cafe_bank, 0, "cafe_bank")
-copy_sheet(wb_new, sd + '\\' + M_bank, 0, "M_bank")
-copy_sheet(wb_new, sd + '\\' + A_bank, 0, "A_bank")
-copy_sheet(wb_new, sd + '\\' + B_bank, 0, "B_bank")
-copy_sheet(wb_new, sd + '\\' + C_bank, 0, "C_bank")
-
+sheet_merge.merge_sheet(filelist, sd, wb_new)
 
 ws1 = wb_new.Worksheets.Add()
 ws1.Name = "calculate"
