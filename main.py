@@ -165,3 +165,4 @@ sheet['B9'] = '=SUM(B4:B8)'
 
 wb.save(filename)
 #수식 적는 곳 끝
+# 1
