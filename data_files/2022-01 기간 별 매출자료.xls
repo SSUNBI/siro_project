@@ -1,0 +1,843 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>2022-01 기간 별 매출자료.xls</title>
+        <style>
+           table thead tr th {text-align: center;}
+           table tbody tr td.center {text-align: center;}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="revListsLayer">
+                <table  class="vTbl revTbl">
+                    <thead>
+                        <tr>
+                        	<th style="width:150px;">숙소 예약번호</th>
+                            <th style="width:150px;">구분</th>
+                            <th style="width:200px;">예약정보</th>
+                            <th style="width:200px;">예약자정보</th>
+                            <th style="width:100px;">결제금액</th>
+                            <th style="width:100px;">최종수수료<br />(야놀자 매출 세금계산서 발행 금액)</th>
+							<th style="width:100px;">결제수단 </th>
+							<th style="width:100px;">기타 할인</th>
+                            <th style="width:100px;">쿠폰 할인</th>
+                            <th style="width:100px;">쿠폰명</th>
+                            <th style="width:100px;">쿠폰 분담금</th>
+                            <th style="width:100px;">정산금액</th>
+							<th style="width:100px;">최종 매출액</th>
+							<th style="width:100px;">은행</th>
+							<th style="width:100px;">계좌번호</th>
+							<th style="width:100px;">계좌주</th>
+
+                            <!--
+
+                                <th style="width:100px;">쿠폰 할인</th>
+                                <th style="width:100px;">쿠폰명</th>
+                                <th style="width:100px;">쿠폰 분담금</th>-->
+
+                        </tr>
+                    </thead>
+                    <tbody>
+												<tr style="background-color:#fff;" >
+								<td class="center" style='mso-number-format:"\@";'>
+									2111241245610154								</td>
+								<td>
+									B103								</td>
+								<td>
+									22.01.09(일)
+																	</td>
+								<td class="center" >
+									*<br />
+								</td>
+								<td style="vertical-align:middle !important;" class="center">
+									170,000<br />
+																	</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+									17,100								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									기타 								</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+                                    5,000								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">0</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen"></span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">0</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">147,900</span>
+								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+                                    165,000								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									농협은행								</td>
+								<td class="center" style='mso-number-format:"\@";'>
+									3511178026163								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									고경자								</td>
+							</tr>
+
+													<tr style="background-color:#f0f0f0;" >
+								<td class="center" style='mso-number-format:"\@";'>
+									2112081201090018								</td>
+								<td>
+									B101								</td>
+								<td>
+									22.01.24(월)
+																	</td>
+								<td class="center" >
+									*<br />
+								</td>
+								<td style="vertical-align:middle !important;" class="center">
+									120,000<br />
+																	</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+									8,339								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									기타 								</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+                                    61								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">7,200</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">D-14전 6%쿠폰_12월</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">0</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">104,400</span>
+								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+                                    112,739								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									농협은행								</td>
+								<td class="center" style='mso-number-format:"\@";'>
+									3511178026163								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									고경자								</td>
+							</tr>
+
+													<tr style="background-color:#fff;" >
+								<td class="center" style='mso-number-format:"\@";'>
+									2112122345520012								</td>
+								<td>
+									A103								</td>
+								<td>
+									22.01.05(수)
+																	</td>
+								<td class="center" >
+									*<br />
+								</td>
+								<td style="vertical-align:middle !important;" class="center">
+									120,000<br />
+																	</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+									8,400								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									기타 								</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+                                    0								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">7,200</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">D-14전 6%쿠폰_12월</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">0</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">104,400</span>
+								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+                                    112,800								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									농협은행								</td>
+								<td class="center" style='mso-number-format:"\@";'>
+									3511178026163								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									고경자								</td>
+							</tr>
+
+													<tr style="background-color:#f0f0f0;" >
+								<td class="center" style='mso-number-format:"\@";'>
+									2112170066103481								</td>
+								<td>
+									A101								</td>
+								<td>
+									22.01.13(목)
+																	</td>
+								<td class="center" >
+									*<br />
+								</td>
+								<td style="vertical-align:middle !important;" class="center">
+									120,000<br />
+																	</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+									15,600								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									기타 								</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+                                    0								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">0</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen"></span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">0</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">104,400</span>
+								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+                                    120,000								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									농협은행								</td>
+								<td class="center" style='mso-number-format:"\@";'>
+									3511178026163								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									고경자								</td>
+							</tr>
+
+													<tr style="background-color:#fff;" >
+								<td class="center" style='mso-number-format:"\@";'>
+									2112191706450268								</td>
+								<td>
+									A103								</td>
+								<td>
+									22.01.01(토)
+																	</td>
+								<td class="center" >
+									*<br />
+								</td>
+								<td style="vertical-align:middle !important;" class="center">
+									450,000<br />
+																	</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+									38,500								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									기타 								</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+                                    0								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">20,000</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">x-mas&새해 2만원 쿠폰</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">0</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">391,500</span>
+								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+                                    430,000								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									농협은행								</td>
+								<td class="center" style='mso-number-format:"\@";'>
+									3511178026163								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									고경자								</td>
+							</tr>
+
+													<tr style="background-color:#f0f0f0;" >
+								<td class="center" style='mso-number-format:"\@";'>
+									2112201305510160								</td>
+								<td>
+									B101								</td>
+								<td>
+									22.01.13(목)
+																	</td>
+								<td class="center" >
+									*<br />
+								</td>
+								<td style="vertical-align:middle !important;" class="center">
+									120,000<br />
+																	</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+									8,400								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									기타 								</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+                                    0								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">7,200</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">D-14전 6%쿠폰_12월</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">0</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">104,400</span>
+								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+                                    112,800								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									농협은행								</td>
+								<td class="center" style='mso-number-format:"\@";'>
+									3511178026163								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									고경자								</td>
+							</tr>
+
+													<tr style="background-color:#fff;" >
+								<td class="center" style='mso-number-format:"\@";'>
+									2112201703580149								</td>
+								<td>
+									B101								</td>
+								<td>
+									22.01.25(화)
+																	</td>
+								<td class="center" >
+									*<br />
+								</td>
+								<td style="vertical-align:middle !important;" class="center">
+									120,000<br />
+																	</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+									7,200								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									기타 								</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+                                    0								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">8,400</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">D-30전 7%쿠폰_12월</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">0</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">104,400</span>
+								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+                                    111,600								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									농협은행								</td>
+								<td class="center" style='mso-number-format:"\@";'>
+									3511178026163								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									고경자								</td>
+							</tr>
+
+													<tr style="background-color:#f0f0f0;" >
+								<td class="center" style='mso-number-format:"\@";'>
+									2112212037320197								</td>
+								<td>
+									A101								</td>
+								<td>
+									22.01.11(화)
+																	</td>
+								<td class="center" >
+									*<br />
+								</td>
+								<td style="vertical-align:middle !important;" class="center">
+									120,000<br />
+																	</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+									8,400								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									기타 								</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+                                    0								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">7,200</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">D-14전 6%쿠폰_12월</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">0</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">104,400</span>
+								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+                                    112,800								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									농협은행								</td>
+								<td class="center" style='mso-number-format:"\@";'>
+									3511178026163								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									고경자								</td>
+							</tr>
+
+													<tr style="background-color:#fff;" >
+								<td class="center" style='mso-number-format:"\@";'>
+									2112231423350180								</td>
+								<td>
+									A101								</td>
+								<td>
+									22.01.01(토)
+																	</td>
+								<td class="center" >
+									*<br />
+								</td>
+								<td style="vertical-align:middle !important;" class="center">
+									450,000<br />
+																	</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+									38,500								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									기타 								</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+                                    0								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">20,000</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">x-mas&새해 2만원 쿠폰</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">0</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">391,500</span>
+								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+                                    430,000								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									농협은행								</td>
+								<td class="center" style='mso-number-format:"\@";'>
+									3511178026163								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									고경자								</td>
+							</tr>
+
+													<tr style="background-color:#f0f0f0;" >
+								<td class="center" style='mso-number-format:"\@";'>
+									2201022068142608								</td>
+								<td>
+									C101								</td>
+								<td>
+									22.01.15(토)
+																	</td>
+								<td class="center" >
+									*<br />
+								</td>
+								<td style="vertical-align:middle !important;" class="center">
+									250,000<br />
+																	</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+									32,500								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									기타 								</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+                                    0								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">0</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen"></span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">0</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">217,500</span>
+								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+                                    250,000								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									농협은행								</td>
+								<td class="center" style='mso-number-format:"\@";'>
+									3511178026163								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									고경자								</td>
+							</tr>
+
+													<tr style="background-color:#fff;" >
+								<td class="center" style='mso-number-format:"\@";'>
+									2201042039610140								</td>
+								<td>
+									C102								</td>
+								<td>
+									22.01.15(토)
+																	</td>
+								<td class="center" >
+									*<br />
+								</td>
+								<td style="vertical-align:middle !important;" class="center">
+									250,000<br />
+																	</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+									20,000								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									기타 								</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+                                    0								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">12,500</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">D-7전 5%쿠폰_1월</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">0</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">217,500</span>
+								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+                                    237,500								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									농협은행								</td>
+								<td class="center" style='mso-number-format:"\@";'>
+									3511178026163								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									고경자								</td>
+							</tr>
+
+													<tr style="background-color:#f0f0f0;" >
+								<td class="center" style='mso-number-format:"\@";'>
+									2201111945310010								</td>
+								<td>
+									C102								</td>
+								<td>
+									22.01.20(목)
+																	</td>
+								<td class="center" >
+									*<br />
+								</td>
+								<td style="vertical-align:middle !important;" class="center">
+									110,000<br />
+																	</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+									8,800								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									기타 								</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+                                    0								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">5,500</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">D-7전 5%쿠폰_1월</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">0</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">95,700</span>
+								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+                                    104,500								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									농협은행								</td>
+								<td class="center" style='mso-number-format:"\@";'>
+									3511178026163								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									고경자								</td>
+							</tr>
+
+													<tr style="background-color:#fff;" >
+								<td class="center" style='mso-number-format:"\@";'>
+									2201122300510018								</td>
+								<td>
+									C101								</td>
+								<td>
+									22.01.31(월)
+																	</td>
+								<td class="center" >
+									*<br />
+								</td>
+								<td style="vertical-align:middle !important;" class="center">
+									250,000<br />
+																	</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+									17,500								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									기타 								</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+                                    0								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">15,000</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">D-14전 6%쿠폰_1월</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">0</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">217,500</span>
+								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+                                    235,000								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									농협은행								</td>
+								<td class="center" style='mso-number-format:"\@";'>
+									3511178026163								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									고경자								</td>
+							</tr>
+
+													<tr style="background-color:#f0f0f0;" >
+								<td class="center" style='mso-number-format:"\@";'>
+									2201171322410103								</td>
+								<td>
+									C102								</td>
+								<td>
+									22.01.31(월)
+																	</td>
+								<td class="center" >
+									*<br />
+								</td>
+								<td style="vertical-align:middle !important;" class="center">
+									250,000<br />
+																	</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+									32,500								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									기타 								</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+                                    0								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">0</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen"></span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">0</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">217,500</span>
+								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+                                    250,000								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									농협은행								</td>
+								<td class="center" style='mso-number-format:"\@";'>
+									3511178026163								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									고경자								</td>
+							</tr>
+
+													<tr style="background-color:#fff;" >
+								<td class="center" style='mso-number-format:"\@";'>
+									2201171403310183								</td>
+								<td>
+									M101								</td>
+								<td>
+									22.01.31(월)
+																	</td>
+								<td class="center" >
+									*<br />
+								</td>
+								<td style="vertical-align:middle !important;" class="center">
+									450,000<br />
+																	</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+									38,500								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									기타 								</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+                                    0								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">20,000</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">D-7전 5%쿠폰_1월</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">0</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">391,500</span>
+								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+                                    430,000								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									농협은행								</td>
+								<td class="center" style='mso-number-format:"\@";'>
+									3511178026163								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									고경자								</td>
+							</tr>
+
+													<tr style="background-color:#f0f0f0;" >
+								<td class="center" style='mso-number-format:"\@";'>
+									2201191209400060								</td>
+								<td>
+									A102								</td>
+								<td>
+									22.01.22(토)
+																	</td>
+								<td class="center" >
+									*<br />
+								</td>
+								<td style="vertical-align:middle !important;" class="center">
+									350,000<br />
+																	</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+									45,500								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									기타 								</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+                                    0								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">0</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen"></span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">0</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">304,500</span>
+								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+                                    350,000								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									농협은행								</td>
+								<td class="center" style='mso-number-format:"\@";'>
+									3511178026163								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									고경자								</td>
+							</tr>
+
+													<tr style="background-color:#fff;" >
+								<td class="center" style='mso-number-format:"\@";'>
+									2201221315460210								</td>
+								<td>
+									C101								</td>
+								<td>
+									22.01.28(금)
+																	</td>
+								<td class="center" >
+									*<br />
+								</td>
+								<td style="vertical-align:middle !important;" class="center">
+									250,000<br />
+																	</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+									-16,250								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									기타 								</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+                                    31,250								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">17,500</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">2021 숙박대전 리워드 7% 쿠폰</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">0</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">217,500</span>
+								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+                                    201,250								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									농협은행								</td>
+								<td class="center" style='mso-number-format:"\@";'>
+									3511178026163								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									고경자								</td>
+							</tr>
+
+													<tr style="background-color:#f0f0f0;" >
+								<td class="center" style='mso-number-format:"\@";'>
+									2201282204300155								</td>
+								<td>
+									A103								</td>
+								<td>
+									22.01.30(일)
+																	</td>
+								<td class="center" >
+									*<br />
+								</td>
+								<td style="vertical-align:middle !important;" class="center">
+									370,000<br />
+																	</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+									32,100								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									기타 								</td>
+
+								<td style="vertical-align:middle !important;" class="center" >
+                                    0								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">16,000</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">설연휴 쿠폰왔설_1.6만원 쿠폰</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">0</span>
+								</td>
+                                <td style="vertical-align:middle !important;" class="center" >
+									<span class="font-yapen">321,900</span>
+								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+                                    354,000								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									농협은행								</td>
+								<td class="center" style='mso-number-format:"\@";'>
+									3511178026163								</td>
+								<td style="vertical-align:middle !important;" class="center" >
+									고경자								</td>
+							</tr>
+
+											</tbody>
+				</table>
+
+            </div>
+        </div>
+    </body>
+</html>
