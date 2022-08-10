@@ -95,6 +95,18 @@ wb.move_sheet("calculate", -9)
 #야놀자
 ws = wb["yanolza"]
 
+#여기어때 시트 정산금액 텍스트 형식 숫자형식으로 W열에 저장
+sheet_yogi_A = wb["yogi_A"]
+for i in range(4,105):
+    sheet_yogi_A.cell(row = i, column = 23, value = '=I'+str(i)+'*1')
+
+sheet_yogi_B = wb["yogi_B"]
+for i in range(4,105):
+    sheet_yogi_B.cell(row = i, column = 23, value = '=I'+str(i)+'*1')
+
+sheet_yogi_C = wb["yogi_C"]
+for i in range(4,105):
+    sheet_yogi_C.cell(row = i, column = 23, value = '=I'+str(i)+'*1')
 
 #수식 적는 곳 시작
 sheet = wb["calculate"]
