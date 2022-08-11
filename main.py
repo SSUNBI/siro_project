@@ -74,7 +74,7 @@ excel.Quit()
 #데이터 한 시트에 묶기
 wb = openpyxl.load_workbook(filename)
 wb.move_sheet("calculate", -9)
-
+sheet_merge.merge_data(wb)
 excel_calculate.add_calculate(wb, year, month)
 
 wb.save(filename)
