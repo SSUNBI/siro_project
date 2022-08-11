@@ -61,7 +61,7 @@ def merge_data(wb):
         year = row[2].value[:2]
         month = row[2].value[3:5]
         day = row[2].value[6:8]
-        date = year + month + day
+        date = int(year + month + day)
         money = int(row[11].value)
         funnel = "yanolza" #유입경로
         temp.append([date, room, money, funnel])
@@ -76,7 +76,7 @@ def merge_data(wb):
         year = row[6].value[2:4]
         month = row[6].value[5:7]
         day = row[6].value[8:10]
-        date = year + month + day
+        date = int(year + month + day)
         money = int(row[9].value)
         funnel = "ddnayo" #유입경로
         temp.append([date, room, money, funnel])
@@ -91,7 +91,7 @@ def merge_data(wb):
         year = row[0].value[2:4]
         month = row[0].value[5:7]
         day = row[0].value[8:10]
-        date = year + month + day
+        date = int(year + month + day)
         money = int(row[8].value.replace(",", ""))
         funnel = "yogi_A" #유입경로
         temp.append([date, room, money, funnel])
@@ -106,7 +106,7 @@ def merge_data(wb):
         year = row[0].value[2:4]
         month = row[0].value[5:7]
         day = row[0].value[8:10]
-        date = year + month + day
+        date = int(year + month + day)
         money = int(row[8].value.replace(",", ""))
         funnel = "yogi_B" #유입경로
         temp.append([date, room, money, funnel])
@@ -121,10 +121,11 @@ def merge_data(wb):
         year = row[0].value[2:4]
         month = row[0].value[5:7]
         day = row[0].value[8:10]
-        date = year + month + day
+        date = int(year + month + day)
         money = int(row[8].value.replace(",", ""))
         funnel = "yogi_C" #유입경로
         temp.append([date, room, money, funnel])
+    temp.sort(key=lambda temp: (temp[0], temp[1]))
     
     ws.append(["이용날짜", "이용객실", "결제금액", "유입경로"])
     for row in temp:
