@@ -10,6 +10,7 @@ def copy_sheet(wb_ct, directory_cf, sheet_num, sheet_name): #wb_ct : workbook co
     ws_t = wb_ct.Worksheets(wb.Sheets[sheet_num].Name)
     ws_t.Name = sheet_name
 
+#각각의 엑셀 파일에서 시트 가져와서 main.xlsx 파일에 병함
 def merge_sheet(filelist, sd, wb_new):
     for i in filelist:
         if i[0] == '2':
@@ -46,6 +47,7 @@ def merge_sheet(filelist, sd, wb_new):
     copy_sheet(wb_new, sd + '\\' + B_bank, 0, "B_bank")
     copy_sheet(wb_new, sd + '\\' + C_bank, 0, "C_bank")
 
+#각 시트에서 데이터를 가져와 테이블로 종합시키는 함수
 def merge_data(wb):
     ws = wb["Sheet1"]
 
@@ -66,6 +68,7 @@ def merge_data(wb):
         funnel = "yanolza" #유입경로
         temp.append([date, room, money, funnel])
     
+    #떠나요
     ddnayo_s = wb["ddnayo"]
     cnt = 0
     for row in ddnayo_s.rows:
@@ -81,6 +84,7 @@ def merge_data(wb):
         funnel = "ddnayo" #유입경로
         temp.append([date, room, money, funnel])
     
+    #여기어때 A
     yogi_A_s = wb["yogi_A"]
     cnt = 0
     for row in yogi_A_s.rows:
@@ -96,6 +100,7 @@ def merge_data(wb):
         funnel = "yogi_A" #유입경로
         temp.append([date, room, money, funnel])
 
+    #여기어때 B
     yogi_B_s = wb["yogi_B"]
     cnt = 0
     for row in yogi_B_s.rows:
@@ -111,6 +116,7 @@ def merge_data(wb):
         funnel = "yogi_B" #유입경로
         temp.append([date, room, money, funnel])
 
+    #여기어때 C
     yogi_C_s = wb["yogi_C"]
     cnt = 0
     for row in yogi_C_s.rows:
@@ -128,6 +134,7 @@ def merge_data(wb):
     temp.sort(key=lambda temp: (temp[0], temp[1]))
     
     ws.append(["이용날짜", "이용객실", "결제금액", "유입경로"])
+    #테이블 만드는 코드
     for row in temp:
         ws.append(row)
     reference = "A1:D" + str(len(temp) + 1)
