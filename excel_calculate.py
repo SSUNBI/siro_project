@@ -91,6 +91,7 @@ def add_calculate(wb, year, month):
     sheet['A8'] = '야놀자'
     sheet['A9'] = '총합'
 
+
     sheet['B3'] = '월매출총합'
     sheet['B4'] = '=SUM(ddnayo!J:J)'
     sheet['B5'] = '=SUM(yogi_A!W4:W105)'
