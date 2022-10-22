@@ -101,10 +101,42 @@ def add_calculate(wb, year, month):
     sheet['B6'] = '=SUM(yogi_B!W4:W105)'
     sheet['B7'] = '=SUM(yogi_C!W4:W105)'
     sheet['B8'] = '=SUM(yanolza!L:L)'
-    sheet['B9'] = '=SUM(B4:B8)'
+    sheet['B9'] = '=SUM(B4:B8)'   
+
+    sheet['A10'] = '떠나요'
+    sheet['B10'] = '떠나요금액'
+    sheet['C10'] = '야놀자'
+    sheet['D10'] = '야놀자금액'
+    sheet['E10'] = '여기어때A'
+    sheet['F10'] = '여기어때A금액'
+    sheet['G10'] = '여기어때B'
+    sheet['H10'] = '여기어때B금액'
+    sheet['I10'] = '여기어때C'
+    sheet['J10'] = '여기어때C금액'
+
 
     start = 11
     for i in ddn_list:
         sheet['A' + str(start)] = str(i[0]) + ' ~ ' + str(i[1])
         sheet['B' + str(start)] = i[2]
+        start += 1
+    start = 11
+    for i in yanolza_list:
+        sheet['C' + str(start)] = str(i[0]) + ' ~ ' + str(i[1])
+        sheet['D' + str(start)] = i[2]
+        start += 1
+    start = 11
+    for i in yogi_A_list:
+        sheet['E' + str(start)] = str(i[0]) + ' ~ ' + str(i[1])
+        sheet['F' + str(start)] = i[2]
+        start += 1
+    start = 11
+    for i in yogi_B_list:
+        sheet['G' + str(start)] = str(i[0]) + ' ~ ' + str(i[1])
+        sheet['H' + str(start)] = i[2]
+        start += 1
+    start = 11
+    for i in yogi_C_list:
+        sheet['I' + str(start)] = str(i[0]) + ' ~ ' + str(i[1])
+        sheet['J' + str(start)] = i[2]
         start += 1
