@@ -74,7 +74,10 @@ def add_calculate(wb, year, month):
     #야놀자 월~일 목요일정산
     #mon : 0 tue = 1 wed = 2 ...
     ddn_list = week_calculate(wb, "ddnayo", 5)
-    yanolza_list = week_calculate(wb, "yanolza", 6) 
+    yanolza_list = week_calculate(wb, "yanolza", 6)
+    yogi_A_list = week_calculate(wb, "yogi_A", 6)
+    yogi_B_list = week_calculate(wb, "yogi_B", 6)
+    yogi_C_list = week_calculate(wb, "yogi_C", 6)
     
     #수식 적는 곳 시작
     sheet = wb["calculate"]
