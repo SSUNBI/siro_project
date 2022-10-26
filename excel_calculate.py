@@ -19,11 +19,10 @@ def week_calculate(wb, name, week_end_day):
     temp_day = now_date % 100
     start_date = temp_date
     while True:
-        if cnt > cs.max_row:
+        if cnt >= cs.max_row:
             if weekday != week_end_day: #week_end_day ddnayo : 6
                 week_list.append([start_date, temp_date, week_sum])
             break
-        
         now_date = cs["A" + str(cnt)].value
         if temp_date == now_date:
             now_year = now_date // 10000 + 2000
@@ -34,7 +33,7 @@ def week_calculate(wb, name, week_end_day):
                 week_sum += cs["C" + str(cnt)].value
             cnt += 1
         else:
-            while temp_date != now_date:
+            while temp_date < now_date:
                 end_date = temp_date
                 temp_day += 1
                 if temp_day > month_range:
@@ -44,7 +43,9 @@ def week_calculate(wb, name, week_end_day):
                         temp_month = 1
                         temp_year += 1
                 temp_date = (temp_year - 2000) * 10000 + temp_month * 100 + temp_day
-            weekday = calendar.weekday(temp_year, temp_month, temp_day)
+                weekday = calendar.weekday(temp_year, temp_month, temp_day)
+                if weekday == (week_end_day + 1) % 7:
+                    break
             if weekday == (week_end_day + 1) % 7: #ddnayo
                 week_list.append([start_date, end_date, week_sum])
                 start_date = temp_date
@@ -97,6 +98,7 @@ def add_calculate(wb, year, month):
     ddn_bank_C_list = []
     yogi_bank_B_list = []
     yogi_bank_C_list = []
+    ddn_sum_list = []
     cnt = 0
     for row in sheet_A_bank.rows:
         if cnt < 8:
@@ -165,6 +167,7 @@ def add_calculate(wb, year, month):
             settlement_date = (year_bank-2000)*10000 + (month_bank)*100 + (date_bank)
             yogi_bank_C_list.append([settlement_date, money_bank, sender])
     
+
     #print(ddn_bank_M_A_list)
     #print(yogi_bank_M_A_list)
     #print(yanolza_bank_list)
@@ -179,6 +182,10 @@ def add_calculate(wb, year, month):
     ddn_bank_C_list.reverse()
     yogi_bank_B_list.reverse()
     yogi_bank_C_list.reverse()
+    
+    for i in range(len(ddn_bank_M_A_list)):
+        ddn_sum_list.append(ddn_bank_M_A_list[i][1] + ddn_bank_B_list[i][1] + ddn_bank_C_list[i][1])
+    print(ddn_sum_list)
 
     #수식 적는 곳 시작
     sheet = wb["calculate"]
