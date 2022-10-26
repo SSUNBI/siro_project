@@ -69,16 +69,37 @@ def add_calculate(wb, year, month):
         sheet_yogi_C.cell(row = i, column = 23, value = '=I'+str(i)+'*1')
 
     #주간 정산금액 불러오기
+    #A_bank (야놀자 모든정산금액 + 떠나요 M+A동 + 여기어때 M+A동) - C,E,H열 데이터 뽑아오기
+    #B_bank (떠나요B동 + 여기어때B동)
+    #C_bank (떠나요C동 + 여기어때C동)
+    #야놀자는 '야놀자펜션0117-'라는 이름으로 들어옴
+    #떠나요는 '주식회사떠나요'라는 이름으로 들어옴
+    #여기어때는 '호텔타임'라는 이름으로 들어옴
     #떠나요 계산기 일~토 화요일정산
     #여기어때 월~일 수요일정산
     #야놀자 월~일 목요일정산
     #mon : 0 tue = 1 wed = 2 ...
+
     ddn_list = week_calculate(wb, "ddnayo", 5)
     yanolza_list = week_calculate(wb, "yanolza", 6)
     yogi_A_list = week_calculate(wb, "yogi_A", 6)
     yogi_B_list = week_calculate(wb, "yogi_B", 6)
     yogi_C_list = week_calculate(wb, "yogi_C", 6)
-    
+
+    sheet_A_bank = wb["A_bank"]
+    yanolza_bank_list = []
+    ddn_bank_list = []
+    yogi_M_A_bank_list = []
+    print(sheet_A_bank.max_column)
+    print(sheet_A_bank.max_row)
+    for i in range(9,int(sheet_A_bank.max_row)):
+        if sheet_A_bank['H'+str(i)] == '주식회사떠나요':
+            ddn_bank_list.append([sheet_A_bank['C'+str(i)],sheet_A_bank['E'+str(i)],sheet_A_bank['H'+str(i)]])
+            print(ddn_bank_list) 
+    else:
+        print()
+
+
     #수식 적는 곳 시작
     sheet = wb["calculate"]
 
