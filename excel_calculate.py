@@ -1,3 +1,4 @@
+from this import d
 import openpyxl
 import calendar
 
@@ -48,7 +49,7 @@ def week_calculate(wb, name, week_end_day):
                 week_list.append([start_date, end_date, week_sum])
                 start_date = temp_date
                 week_sum = 0
-    #print(week_list)
+    print(week_list)
     return week_list
 
 def add_calculate(wb, year, month):
@@ -87,22 +88,97 @@ def add_calculate(wb, year, month):
     yogi_C_list = week_calculate(wb, "yogi_C", 6)
 
     sheet_A_bank = wb["A_bank"]
+    sheet_B_bank = wb["B_bank"]
+    sheet_C_bank = wb["C_bank"]
     yanolza_bank_list = []
-    ddn_bank_list = []
-    yogi_M_A_bank_list = []
+    ddn_bank_M_A_list = []
+    yogi_bank_M_A_list = []
+    ddn_bank_B_list = []
+    ddn_bank_C_list = []
+    yogi_bank_B_list = []
+    yogi_bank_C_list = []
     cnt = 0
     for row in sheet_A_bank.rows:
         if cnt < 8:
             cnt += 1
             continue
-        sender = row[7].value
+        sender = str(row[7].value)
         if sender == '주식회사떠나요':
-            year1 = row[2].value[:4]
-            month1 = row[2].value[5:7]
-            date1 = row[2].value[8:10]
-            money = int(row[4].value)
-            ddn_bank_list.append([year1, month1, date1, money, sender])
-    print(ddn_bank_list)
+            year_bank = int(row[2].value[:4])
+            month_bank = int(row[2].value[5:7])
+            date_bank = int(row[2].value[8:10])
+            money_bank = int(row[4].value)
+            settlement_date = (year_bank-2000)*10000 + (month_bank)*100 + (date_bank)
+            ddn_bank_M_A_list.append([settlement_date, money_bank, sender])
+        elif sender == '호텔타임':
+            year_bank = int(row[2].value[:4])
+            month_bank = int(row[2].value[5:7])
+            date_bank = int(row[2].value[8:10])
+            money_bank = int(row[4].value)
+            settlement_date = (year_bank-2000)*10000 + (month_bank)*100 + (date_bank)
+            yogi_bank_M_A_list.append([settlement_date, money_bank, sender])
+        elif sender[:5] == '야놀자펜션':
+            year_bank = int(row[2].value[:4])
+            month_bank = int(row[2].value[5:7])
+            date_bank = int(row[2].value[8:10])
+            money_bank = int(row[4].value)
+            settlement_date = (year_bank-2000)*10000 + (month_bank)*100 + (date_bank)
+            yanolza_bank_list.append([settlement_date, money_bank, sender])
+    cnt = 0
+    for row in sheet_B_bank.rows:
+        if cnt < 8:
+            cnt += 1
+            continue
+        sender = str(row[7].value)
+        if sender == '주식회사떠나요':
+            year_bank = int(row[2].value[:4])
+            month_bank = int(row[2].value[5:7])
+            date_bank = int(row[2].value[8:10])
+            money_bank = int(row[4].value)
+            settlement_date = (year_bank-2000)*10000 + (month_bank)*100 + (date_bank)
+            ddn_bank_B_list.append([settlement_date, money_bank, sender])
+        elif sender == '호텔타임':
+            year_bank = int(row[2].value[:4])
+            month_bank = int(row[2].value[5:7])
+            date_bank = int(row[2].value[8:10])
+            money_bank = int(row[4].value)
+            settlement_date = (year_bank-2000)*10000 + (month_bank)*100 + (date_bank)
+            yogi_bank_B_list.append([settlement_date, money_bank, sender])
+    cnt = 0
+    for row in sheet_C_bank.rows:
+        if cnt < 8:
+            cnt += 1
+            continue
+        sender = str(row[7].value)
+        if sender == '주식회사떠나요':
+            year_bank = int(row[2].value[:4])
+            month_bank = int(row[2].value[5:7])
+            date_bank = int(row[2].value[8:10])
+            money_bank = int(row[4].value)
+            settlement_date = (year_bank-2000)*10000 + (month_bank)*100 + (date_bank)
+            ddn_bank_C_list.append([settlement_date, money_bank, sender])
+        elif sender == '호텔타임':
+            year_bank = int(row[2].value[:4])
+            month_bank = int(row[2].value[5:7])
+            date_bank = int(row[2].value[8:10])
+            money_bank = int(row[4].value)
+            settlement_date = (year_bank-2000)*10000 + (month_bank)*100 + (date_bank)
+            yogi_bank_C_list.append([settlement_date, money_bank, sender])
+    
+    #print(ddn_bank_M_A_list)
+    #print(yogi_bank_M_A_list)
+    #print(yanolza_bank_list)
+    #print(ddn_bank_B_list)
+    #print(ddn_bank_C_list)
+    #print(yogi_bank_B_list)
+    #print(yogi_bank_C_list)
+    ddn_bank_M_A_list.reverse()#내림차순 정렬
+    yanolza_bank_list.reverse()
+    yogi_bank_M_A_list.reverse()
+    ddn_bank_B_list.reverse()
+    ddn_bank_C_list.reverse()
+    yogi_bank_B_list.reverse()
+    yogi_bank_C_list.reverse()
 
     #수식 적는 곳 시작
     sheet = wb["calculate"]
@@ -138,7 +214,20 @@ def add_calculate(wb, year, month):
     sheet['H10'] = '여기어때B금액'
     sheet['I10'] = '여기어때C'
     sheet['J10'] = '여기어때C금액'
-
+    sheet['A19'] = '떠나요M+A정산일'
+    sheet['B19'] = '떠나요M+A정산금액'
+    sheet['C19'] = '떠나요B정산일'
+    sheet['D19'] = '떠나요B정산금액'
+    sheet['E19'] = '떠나요C정산일'
+    sheet['F19'] = '떠나요C정산금액'
+    sheet['G19'] = '야놀자정산일'
+    sheet['H19'] = '야놀자B정산금액'
+    sheet['I19'] = '여기어때A정산일'
+    sheet['J19'] = '여기어때A정산금액'
+    sheet['K19'] = '여기어때B정산일'
+    sheet['L19'] = '여기어때B정산금액'
+    sheet['M19'] = '여기어때C정산일'
+    sheet['N19'] = '여기어때C정산금액'
 
     start = 11
     for i in ddn_list:
@@ -165,3 +254,39 @@ def add_calculate(wb, year, month):
         sheet['I' + str(start)] = str(i[0]) + ' ~ ' + str(i[1])
         sheet['J' + str(start)] = i[2]
         start += 1
+    start = 20
+    for i in ddn_bank_M_A_list:
+        sheet['A' + str(start)] = i[0]
+        sheet['B' + str(start)] = i[1]
+        start += 1
+    start = 20
+    for i in ddn_bank_B_list:
+        sheet['C' + str(start)] = i[0]
+        sheet['D' + str(start)] = i[1]
+        start += 1
+    start = 20
+    for i in ddn_bank_C_list:
+        sheet['E' + str(start)] = i[0]
+        sheet['F' + str(start)] = i[1]
+        start += 1
+    start = 20
+    for i in yanolza_bank_list:
+        sheet['G' + str(start)] = i[0]
+        sheet['H' + str(start)] = i[1]
+        start += 1
+    start = 20
+    for i in yogi_bank_M_A_list:
+        sheet['I' + str(start)] = i[0]
+        sheet['J' + str(start)] = i[1]
+        start += 1
+    start = 20
+    for i in yogi_bank_B_list:
+        sheet['K' + str(start)] = i[0]
+        sheet['L' + str(start)] = i[1]
+        start += 1
+    start = 20
+    for i in yogi_bank_C_list:
+        sheet['M' + str(start)] = i[0] 
+        sheet['N' + str(start)] = i[1]
+        start += 1
+    
