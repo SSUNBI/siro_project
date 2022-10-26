@@ -48,7 +48,7 @@ def week_calculate(wb, name, week_end_day):
                 week_list.append([start_date, end_date, week_sum])
                 start_date = temp_date
                 week_sum = 0
-    print(week_list)
+    #print(week_list)
     return week_list
 
 def add_calculate(wb, year, month):
@@ -90,15 +90,19 @@ def add_calculate(wb, year, month):
     yanolza_bank_list = []
     ddn_bank_list = []
     yogi_M_A_bank_list = []
-    print(sheet_A_bank.max_column)
-    print(sheet_A_bank.max_row)
-    for i in range(9,int(sheet_A_bank.max_row)):
-        if sheet_A_bank['H'+str(i)] == '주식회사떠나요':
-            ddn_bank_list.append([sheet_A_bank['C'+str(i)],sheet_A_bank['E'+str(i)],sheet_A_bank['H'+str(i)]])
-            print(ddn_bank_list) 
-    else:
-        print()
-
+    cnt = 0
+    for row in sheet_A_bank.rows:
+        if cnt < 8:
+            cnt += 1
+            continue
+        sender = row[7].value
+        if sender == '주식회사떠나요':
+            year1 = row[2].value[:4]
+            month1 = row[2].value[5:7]
+            date1 = row[2].value[8:10]
+            money = int(row[4].value)
+            ddn_bank_list.append([year1, month1, date1, money, sender])
+    print(ddn_bank_list)
 
     #수식 적는 곳 시작
     sheet = wb["calculate"]
