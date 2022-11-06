@@ -202,7 +202,6 @@ def add_calculate(wb, year, month):
     sheet['A8'] = '야놀자'
     sheet['A9'] = '총합'
 
-
     sheet['B3'] = '월매출총합'
     sheet['B4'] = '=SUM(ddnayo!J:J)'
     sheet['B5'] = '=SUM(yogi_A!W4:W105)'
@@ -211,89 +210,111 @@ def add_calculate(wb, year, month):
     sheet['B8'] = '=SUM(yanolza!L:L)'
     sheet['B9'] = '=SUM(B4:B8)'   
 
-    sheet['A10'] = '떠나요'
-    sheet['B10'] = '떠나요금액'
-    sheet['C10'] = '야놀자'
-    sheet['D10'] = '야놀자금액'
-    sheet['E10'] = '여기어때A'
-    sheet['F10'] = '여기어때A금액'
-    sheet['G10'] = '여기어때B'
-    sheet['H10'] = '여기어때B금액'
-    sheet['I10'] = '여기어때C'
-    sheet['J10'] = '여기어때C금액'
-    sheet['A19'] = '떠나요M+A정산일'
-    sheet['B19'] = '떠나요M+A정산금액'
-    sheet['C19'] = '떠나요B정산일'
-    sheet['D19'] = '떠나요B정산금액'
-    sheet['E19'] = '떠나요C정산일'
-    sheet['F19'] = '떠나요C정산금액'
-    sheet['G19'] = '야놀자정산일'
-    sheet['H19'] = '야놀자B정산금액'
-    sheet['I19'] = '여기어때A정산일'
-    sheet['J19'] = '여기어때A정산금액'
-    sheet['K19'] = '여기어때B정산일'
-    sheet['L19'] = '여기어때B정산금액'
-    sheet['M19'] = '여기어때C정산일'
-    sheet['N19'] = '여기어때C정산금액'
-
-    start = 11
+    #떠나요 사이트 및 은행 정산현황
+    sheet['A11'] = '떠나요'
+    sheet['A12'] = '사이트'
+    sheet['A13'] = '기간'
+    sheet['B13'] = '금액'
+    sheet['C12'] = '은행'
+    sheet['C13'] = '정산일'
+    sheet['D13'] = 'M+A'
+    sheet['E13'] = 'B'
+    sheet['F13'] = 'C'
+    start = 14
     for i in ddn_list:
         sheet['A' + str(start)] = str(i[0]) + ' ~ ' + str(i[1])
         sheet['B' + str(start)] = i[2]
+        for j in ddn_bank_M_A_list:
+            if j[0] > i[1] and j[0] < i[1]+9:
+                sheet['C'+str(start)] = j[0]
+                sheet['D'+str(start)] = j[1]
+        for q in ddn_bank_B_list:
+            if q[0] > i[1] and q[0] < i[1]+9:
+                sheet['e'+str(start)] = q[1]
+        for k in ddn_bank_C_list:
+            if k[0] > i[1] and k[0] < i[1]+9:
+                sheet['f'+str(start)] = k[1]
         start += 1
-    start = 11
+
+    #야놀자 사이트 및 은행 정산현황
+    sheet['A22'] = '야놀자'
+    sheet['A23'] = '사이트'
+    sheet['A24'] = '기간'
+    sheet['B24'] = '금액'
+    sheet['C23'] = '은행'
+    sheet['C24'] = '정산일'
+    sheet['D24'] = '금액'
+    start = 25
     for i in yanolza_list:
-        sheet['C' + str(start)] = str(i[0]) + ' ~ ' + str(i[1])
-        sheet['D' + str(start)] = i[2]
+        sheet['A' + str(start)] = str(i[0]) + ' ~ ' + str(i[1])
+        sheet['B' + str(start)] = i[2]
+        for j in yanolza_bank_list:
+            if j[0] > i[1] and j[0] < i[1]+9:
+                sheet['C'+str(start)] = j[0]
+                sheet['D'+str(start)] = j[1]
         start += 1
-    start = 11
+    
+    #여기어때 M+A 동 사이트 및 은행 정산 현황
+    sheet['A33'] = '여기어때'
+    sheet['A34'] = 'M+A동'
+    sheet['A35'] = '사이트'
+    sheet['A36'] = '기간'
+    sheet['B24'] = '금액'
+    sheet['C35'] = '은행'
+    sheet['C36'] = '정산일'
+    sheet['D36'] = '금액'
+    start = 37
     for i in yogi_A_list:
+        sheet['A' + str(start)] = str(i[0]) + ' ~ ' + str(i[1])
+        sheet['B' + str(start)] = i[2]
+        for j in yogi_bank_M_A_list:
+            if j[0] > i[1] and j[0] < i[1]+9:
+                sheet['C'+str(start)] = j[0]
+                sheet['D'+str(start)] = j[1]
+        start += 1
+
+    #여기어때 B동 사이트 및 은행 정산 현황
+    sheet['E34'] = 'B동'
+    sheet['E35'] = '사이트'
+    sheet['E36'] = '기간'
+    sheet['F36'] = '금액'
+    sheet['G35'] = '은행'
+    sheet['G35'] = '정산일'
+    sheet['H36'] = '금액'
+    start = 37
+    for i in yogi_B_list:
         sheet['E' + str(start)] = str(i[0]) + ' ~ ' + str(i[1])
         sheet['F' + str(start)] = i[2]
+        for j in yogi_bank_B_list:
+            if j[0] > i[1] and j[0] < i[1]+9:
+                sheet['G'+str(start)] = j[0]
+                sheet['H'+str(start)] = j[1]
         start += 1
-    start = 11
-    for i in yogi_B_list:
-        sheet['G' + str(start)] = str(i[0]) + ' ~ ' + str(i[1])
-        sheet['H' + str(start)] = i[2]
-        start += 1
-    start = 11
+
+    #여기어때 C동 사이트 및 은행 정산 현황
+    sheet['I34'] = 'B동'
+    sheet['I35'] = '사이트'
+    sheet['I36'] = '기간'
+    sheet['J36'] = '금액'
+    sheet['K35'] = '은행'
+    sheet['K35'] = '정산일'
+    sheet['L36'] = '금액'
+    start = 37
     for i in yogi_C_list:
         sheet['I' + str(start)] = str(i[0]) + ' ~ ' + str(i[1])
         sheet['J' + str(start)] = i[2]
+        for j in yogi_bank_C_list:
+            if j[0] > i[1] and j[0] < i[1]+9:
+                sheet['K'+str(start)] = j[0]
+                sheet['L'+str(start)] = j[1]
         start += 1
-    start = 20
-    for i in ddn_bank_M_A_list:
-        sheet['A' + str(start)] = i[0]
-        sheet['B' + str(start)] = i[1]
-        start += 1
-    start = 20
-    for i in ddn_bank_B_list:
-        sheet['C' + str(start)] = i[0]
-        sheet['D' + str(start)] = i[1]
-        start += 1
-    start = 20
-    for i in ddn_bank_C_list:
-        sheet['E' + str(start)] = i[0]
-        sheet['F' + str(start)] = i[1]
-        start += 1
-    start = 20
-    for i in yanolza_bank_list:
-        sheet['G' + str(start)] = i[0]
-        sheet['H' + str(start)] = i[1]
-        start += 1
-    start = 20
-    for i in yogi_bank_M_A_list:
-        sheet['I' + str(start)] = i[0]
-        sheet['J' + str(start)] = i[1]
-        start += 1
-    start = 20
-    for i in yogi_bank_B_list:
-        sheet['K' + str(start)] = i[0]
-        sheet['L' + str(start)] = i[1]
-        start += 1
-    start = 20
-    for i in yogi_bank_C_list:
-        sheet['M' + str(start)] = i[0] 
-        sheet['N' + str(start)] = i[1]
-        start += 1
-    
+
+#시트 autofit
+    for col in sheet.columns:
+        max_length = 0
+        column = col[0].column_letter
+        for cell in col:
+            if len(str(cell.value)) > max_length:
+                    max_length = len(str(cell.value))
+        adjusted_width = (max_length + 2)*1.2
+        sheet.column_dimensions[column].width = adjusted_width
